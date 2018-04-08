@@ -1,0 +1,15 @@
+{
+    "name": "adam/vending-visitor",
+    "description": "Vending machine locator",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Adam Ritchie",
+            "email": "aritchie05@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+
+    "require": {}
+}
