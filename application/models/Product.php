@@ -6,64 +6,16 @@
  * Date: 4/8/2018
  * Time: 1:53 AM
  */
-class Product
+class Product extends CI_Model
 {
-	private $id;
-	private $name;
-	private $price;
-	private $type;
-	private $imageName;
-
-
-	public function getId()
+	public function __construct()
 	{
-		return $this->id;
+		$this->load->database();
 	}
 
-	public function setId($id)
+	public function getAllProducts()
 	{
-		$this->id = $id;
+		$query = $this->db->get('Products');
+		return $query->result_array();
 	}
-
-	public function getName()
-	{
-		return $this->name;
-	}
-
-	public function setName($name)
-	{
-		$this->name = $name;
-	}
-
-	public function getPrice()
-	{
-		return $this->price;
-	}
-
-	public function setPrice($price)
-	{
-		$this->price = $price;
-	}
-
-	public function getType()
-	{
-		return $this->type;
-	}
-
-	public function setType($type)
-	{
-		$this->type = $type;
-	}
-
-	public function getImageName()
-	{
-		return $this->imageName;
-	}
-
-	public function setImageName($imageName)
-	{
-		$this->imageName = $imageName;
-	}
-
-
 }
