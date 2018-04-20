@@ -9,7 +9,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-	<title><?php echo $page_title; ?></title>
+	<title><?php
+		if (!empty($page_title)) {
+			echo $page_title;
+		} else {
+			echo 'Vending Visitor';
+		} ?></title>
 </head>
 
 <body>
@@ -27,6 +32,12 @@
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="/index.php/browse/all">Browse Items</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/index.php/browse/product/3">Product ID 3</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/index.php/map/browse">Map Test</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">Feedback</a>

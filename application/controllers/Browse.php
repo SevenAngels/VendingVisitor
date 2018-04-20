@@ -25,4 +25,13 @@ class Browse extends CI_Controller
 		$this->load->view('templates/header.php', $data);
 		$this->load->view('pages/browse.php', $data);
 	}
+
+	public function product($id)
+	{
+		$data['page_title'] = 'Vending Visitor - Browse';
+		$data['product'] = $this->Product->getProductByID($id);
+
+		$this->load->view('templates/header.php', $data);
+		$this->load->view('pages/product.php', $data);
+	}
 }
