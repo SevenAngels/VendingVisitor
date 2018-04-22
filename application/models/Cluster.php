@@ -10,15 +10,15 @@
  * Field names are exact and case sensitive. So to use, you would do e.g. $cluster->Building
  *
  * id            int
- * Building        String
- * Description    String            (description of the location, e.g. Main Level near computers)
+ * Building      String
+ * Description   String          (description of the location, e.g. Main Level near computers)
  *
- * Latitude        DECIMAL?        MySQL db stores as DECIMAL, not sure what it is stored as in PHP object
- * Longitude    DECIMAL?        but it works, so hurray?
+ * Latitude      DECIMAL?        MySQL db stores as DECIMAL, not sure what it is stored as in PHP object
+ * Longitude     DECIMAL?        but it works, so hurray?
  *
- * NumFood        int                (number of food machines located at this cluster)
- * NumDrink        int                (I'm sure you can extrapolate what this one means)
- * NumCoffee    int
+ * NumFood       int             (number of food machines located at this cluster)
+ * NumDrink      int             (I'm sure you can extrapolate what this one means)
+ * NumCoffee     int
  */
 class Cluster extends CI_Model
 {

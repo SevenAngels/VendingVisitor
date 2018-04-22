@@ -9,17 +9,17 @@
  * Objects returned by the functions in this class will have the following fields:
  * Field names are exact and case sensitive. So to use, you would do e.g. $machine->Brand
  *
- * id            int
- * Brand        String            (Coca-Cola, Dasani, etc.)
- * Type            String            (Food, Drink, or Coffee)
- * Niner        int                (1 or 0)
- * Credit        int                (1 or 0)
- * Contents        array(Product)    (see Product.php)
+ * id           int
+ * Brand        String          (Coca-Cola, Dasani, etc.)
+ * Type         String          (Food, Drink, or Coffee)
+ * Niner        int             (1 or 0)
+ * Credit       int             (1 or 0)
+ * Contents     array(Product)  (see Product.php)
  *
- * Building        String
- * Description    String            (description of the location, e.g. Main Level near computers)
+ * Building     String
+ * Description  String          (description of the location, e.g. Main Level near computers)
  *
- * Latitude        DECIMAL?        MySQL db stores as DECIMAL, not sure what it is stored as in PHP object
+ * Latitude     DECIMAL?        MySQL db stores as DECIMAL, not sure what it is stored as in PHP object
  * Longitude    DECIMAL?        but it works, so hurray?
  */
 class Machine extends CI_Model

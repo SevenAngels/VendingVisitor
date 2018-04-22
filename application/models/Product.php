@@ -10,10 +10,10 @@
  * Field names are exact and case sensitive. So to use, you would do e.g. $product->Name
  *
  * id            int
- * Name            String
- * Price        int                (in CENTS! e.g. 275)
- * Type            String            (Food, Drink)
- * ImageName    String            (e.g. amp.png - to use: <img src="/assets/imgs/products/[ImageName]">)
+ * Name          String
+ * Price         int               (in CENTS! e.g. 275)
+ * Type          String            (Food, Drink)
+ * ImageName     String            (e.g. amp.png - to use: <img src="/assets/imgs/products/[ImageName]">)
  */
 class Product extends CI_Model
 {
