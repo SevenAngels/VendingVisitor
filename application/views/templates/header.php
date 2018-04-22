@@ -9,12 +9,14 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-	<title><?php
+	<title>
+		<?php
 		if (!empty($page_title)) {
 			echo $page_title;
 		} else {
 			echo 'Vending Visitor';
-		} ?></title>
+		} ?>
+	</title>
 </head>
 
 <body>
@@ -34,10 +36,7 @@
 				<a class="nav-link" href="/index.php/browse/all">Browse Items</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/index.php/browse/product/3">Product ID 3</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/index.php/map/browse">Map Test</a>
+				<a class="nav-link" href="/index.php/map/testProductID">Testing</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">Feedback</a>
@@ -46,8 +45,9 @@
 				<a class="nav-link" href="#">Contact Us</a>
 			</li>
 		</ul>
-		<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="search" placeholder="Search for Inventory" aria-label="Search">
+		<form class="form-inline my-2 my-lg-0" action="/index.php/search/searchForProduct" method="get">
+			<input name="query" class="form-control mr-sm-2" type="search" placeholder="Search for Inventory"
+				   aria-label="Search"/>
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 		</form>
 	</div>

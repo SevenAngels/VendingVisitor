@@ -28,7 +28,7 @@ class Product extends CI_Model
 	 */
 	public function getProductsByName($name)
 	{
-		$sql = 'SELECT * FROM Products WHERE Name LIKE ?';
+		$sql = 'SELECT * FROM Products WHERE Name LIKE ? ORDER BY Price';
 		$query = $this->db->query($sql, array('%' . $name . '%'));
 		return $query->result();
 	}
