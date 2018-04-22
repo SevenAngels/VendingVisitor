@@ -1,10 +1,19 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: Adam
- * Date: 4/8/2018
- * Time: 1:53 AM
+ * Created by Adam Ritchie
+ * README!
+ *
+ * A Product is a food or drink item contained in a Machine.
+ *
+ * Objects returned by the functions in this class will have the following fields:
+ * Field names are exact and case sensitive. So to use, you would do e.g. $product->Name
+ *
+ * id            int
+ * Name            String
+ * Price        int                (in CENTS! e.g. 275)
+ * Type            String            (Food, Drink)
+ * ImageName    String            (e.g. amp.png - to use: <img src="/assets/imgs/products/[ImageName]">)
  */
 class Product extends CI_Model
 {
@@ -14,7 +23,7 @@ class Product extends CI_Model
 	}
 
 	/**
-	 * @return mixed Array of all products in the database
+	 * @return array of all Products
 	 */
 	public function getAllProducts()
 	{
@@ -23,8 +32,8 @@ class Product extends CI_Model
 	}
 
 	/**
-	 * @param $name String which represents the name of the product to be searched for
-	 * @return mixed Array of products whose names contain the param string
+	 * @param $name String search query
+	 * @return array of Products with names containing or matching search query
 	 */
 	public function getProductsByName($name)
 	{
@@ -34,8 +43,8 @@ class Product extends CI_Model
 	}
 
 	/**
-	 * @param $id int the id of the product to be selected
-	 * @return mixed Array which represents the row of the correct product
+	 * @param $id int the ID of the product
+	 * @return Product the Product with the correct ID, or null if not found
 	 */
 	public function getProductByID($id)
 	{
