@@ -17,7 +17,7 @@
                         <div class="card mb-4 box-shadow">
                         <img src="/assets/imgs/products/<?php echo $product->ImageName ?>" alt="<?php echo $product->ImageName ?>" class="rounded mx-auto d-block" height="300" width="120" >
                              <div class="card-body">
-                                <p class="card-text"><?php echo $product->Name ?></p>
+                                <p class="card-text"><?php echo $product->Name ?><br><?php echo $product->Price ?></p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">Directions</button>
