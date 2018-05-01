@@ -9,6 +9,11 @@
 /** @var array $products SQL query result for all products to be displayed */
 ?>
 <main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Browse Items</h1>
+        </div>
+    </section>
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row">
