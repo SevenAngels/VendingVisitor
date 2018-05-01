@@ -6,7 +6,7 @@
  * Time: 8:20 PM
  */
 
-/** @var array $products SQL query result for all products to be displayed Hello*/
+/** @var array $products SQL query result for all products to be displayed */
 ?>
 <main role="main">
     <div class="album py-5 bg-light">
@@ -22,7 +22,6 @@
                                         <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">Directions</button>
                                         </div>
-                                        <small class="text-muted">9 mins</small>
                                     </div>
                              </div>
                         </div>
