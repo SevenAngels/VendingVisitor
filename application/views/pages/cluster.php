@@ -12,9 +12,8 @@
                     foreach ($machines as $machine): ?>
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                                <blockquote class="blockquote text-center">
-	                            <h3><?php echo $machine->Type ?> Machine</h3>
-                                </blockquote>
+                                <h5 class="card-header">
+	                            <?php echo $machine->Type ?> Machine</h5>
                                     <div class="card-body">
 	                                    <!-- <?php if ($machine->Type == 'Drink'): ?>
 		                                <p>Machine Brand: <?php echo $machine->Brand ?></p>
