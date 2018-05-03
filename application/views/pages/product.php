@@ -48,7 +48,7 @@ echo $product->Name . "\n"; ?>
 	function initMap() {
 		var infoWindow;
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 17,
+			zoom: 16,
 			center: {lat: 35.307, lng: -80.734}
 		});
 		let marker; //TODO make info window content more robust
