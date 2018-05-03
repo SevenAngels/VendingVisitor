@@ -22,6 +22,7 @@ class Products extends CI_Controller
 
 		$data['page_title'] = 'Vending Visitor - Browse';
 		$data['products'] = $this->Product->getAllProducts();
+		$data['active'] = 'Browse';
 
 		$this->load->view('templates/header.php', $data);
 		$this->load->view('pages/browse.php', $data);
@@ -33,6 +34,7 @@ class Products extends CI_Controller
 		$data['page_title'] = 'Vending Visitor - Browse';
 		$data['product'] = $this->Product->getProductByID($id);
 		$data['machines'] = $this->Machine->getMachinesWithProduct($id);
+		$data['active'] = 'Browse';
 		$this->load->view('templates/header.php', $data);
 		$this->load->view('pages/product.php', $data);
 		$this->load->view('templates/footer.php', $data);

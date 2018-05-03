@@ -25,6 +25,7 @@ class Search extends CI_Controller
 		$data['page_title'] = "Search Results - $query";
 		$data['results'] = $this->Product->getProductsByName($query);
 		$data['query'] = $query;
+		$data['active'] = 'Browse';
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('pages/searchresults.php', $data);

@@ -31,16 +31,17 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item">
-				<a class="nav-link" href="/index.php/map/view">Home<span class="sr-only">(current)</span></a>
+			<li class="nav-item <?php /** @var string $active */
+			if ($active == 'Map') echo 'active' ?>">
+				<a class="nav-link" href="/index.php/map/view">Map<span class="sr-only">(current)</span></a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item <?php if ($active == 'Browse') echo 'active' ?>">
 				<a class="nav-link" href="/index.php/products/viewAll">Browse Items</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item <?php if ($active == 'Feedback') echo 'active' ?>">
 				<a class="nav-link" href="#">Feedback</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item <?php if ($active == 'Contact') echo 'active' ?>">
 				<a class="nav-link" href="#">Contact Us</a>
 			</li>
 		</ul>
