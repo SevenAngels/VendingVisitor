@@ -17,7 +17,8 @@ echo $product->Name . "\n"; ?>
                         <img src="/assets/imgs/products/<?php echo $product->ImageName ?>"
                              alt="<?php echo $product->ImageName ?>" class="rounded mx-auto d-block" height="300">
                             <div class="card-body">
-                                <?php echo 'Price = $' . $product->Price / 100 . "\n";?><br>
+								<?php echo 'Price = $' . number_format(
+										($product->Price / 100), 2, '.', ' ') ?><br>
                                 <?php echo 'Type = ' . $product->Type . "\n"; ?>
                             </div>
                     </div>
