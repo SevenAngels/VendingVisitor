@@ -28,7 +28,7 @@
                                         <div class="btn-group">
 											<a href="/index.php/products/viewProduct/<?php echo $product->id ?>">
 												<button type="button" class="btn btn-sm btn-outline-secondary">View
-													Product
+													Product Info
 												</button>
 											</a>
                                         </div>
