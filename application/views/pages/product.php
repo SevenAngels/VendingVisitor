@@ -1,28 +1,48 @@
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">
 <?php
 /** @var Product $product to be displayed */
-echo 'ID = ' . $product->id . "\n";
-echo 'Name = ' . $product->Name . "\n";
-echo 'Price = $' . $product->Price / 100 . "\n";
-echo 'Type = ' . $product->Type . "\n";
-?>
+/*echo 'ID = ' . $product->id . "\n";*/
+echo $product->Name . "\n"; ?>
+            </h1>
+        </div>
+    </section>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img src="/assets/imgs/products/<?php echo $product->ImageName ?>"
+                             alt="<?php echo $product->ImageName ?>" class="rounded mx-auto d-block" height="300">
+                            <div class="card-body">
+                                <?php echo 'Price = $' . $product->Price / 100 . "\n";?><br>
+                                <?php echo 'Type = ' . $product->Type . "\n"; ?>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<img src="/assets/imgs/products/<?php echo $product->ImageName ?>">
+</main>
+
 
 <div id="map"></div>
 <style>
-	/* Always set the map height explicitly to define the size of the div
+    /* Always set the map height explicitly to define the size of the div
      * element that contains the map. */
-	#map {
-		height: 30%;
-		width: 30%;
-	}
+    #map {
+        height: 95%;
+    }
 
-	html, body {
-		height: 100%;
-		width: 100%;
-		margin: 0;
-		padding: 0;
-	}
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
 </style>
 <script>
 	function initMap() {
