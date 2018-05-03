@@ -3,7 +3,7 @@
 	/* Always set the map height explicitly to define the size of the div
      * element that contains the map. */
 	#map {
-		height: 95%;
+		height: 92%;
 	}
 
 	/* Optional: Makes the sample page fill the window. */
@@ -29,10 +29,7 @@
 			NumFood: <?php echo $cluster->NumFood ?>,
 			NumDrink: <?php echo $cluster->NumDrink ?>,
 			NumCoffee: <?php echo $cluster->NumCoffee ?>,
-			Content: '<a href="/index.php/clusters/viewCluster/<?php echo $cluster->id ?>">' +
-			'<h1><?php echo $cluster->Building ?></h1><br><h2><?php echo $cluster->Description?>' +
-			'</h2><p><br>Snack Machines: <?php echo $cluster->NumFood?><br>Drink Machines: <?php echo
-			$cluster->NumDrink ?><br>Coffee Machines: <?php echo $cluster->NumCoffee ?></p></a>'
+			Content: '<?php echo $cluster->Content ?>'
 		};
 		<?php endfor; ?>
 

@@ -26,7 +26,13 @@ class Map extends CI_Controller
 		}
 
 		$data['page_title'] = "Vending Visitor";
-		$data['clusters'] = $this->Cluster->getAllClusters();
+		$clusters = $this->Cluster->getAllClusters();
+		$output = array();
+		foreach ($clusters as $cluster) {
+			$cluster = $this->getInfoWindow($cluster);
+			array_push($output, $cluster);
+		}
+		$data['clusters'] = $output;
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('pages/map', $data);
@@ -60,5 +66,35 @@ class Map extends CI_Controller
 		$this->load->view('templates/header', $data);
 		$this->load->view('pages/maptest', $data);
 		$this->load->view('templates/footer.php', $data);
+	}
+
+	private function getInfoWindow($cluster)
+	{
+		$content =
+			"<section class=\"jumbotron text-center\"><div class=\"container\"><h1 class=\"jumbotron-heading\">$cluster->Building</h1></div><p class=\"lead text-muted\">$cluster->Description</p><p class=\"lead text-muted\">";
+		if ($cluster->NumFood > 0) {
+			$content = $content . "$cluster->NumFood Snack Machine";
+			if ($cluster->NumFood > 1) {
+				$content = $content . "s";
+			}
+			$content = $content . "<br>";
+		}
+		if ($cluster->NumDrink > 0) {
+			$content = $content . "$cluster->NumDrink Drink Machine";
+			if ($cluster->NumDrink > 1) {
+				$content = $content . "s";
+			}
+			$content = $content . "<br>";
+		}
+		if ($cluster->NumCoffee > 0) {
+			$content = $content . "$cluster->NumCoffee Coffee Machine";
+			if ($cluster->NumCoffee > 1) {
+				$content = $content . "s";
+			}
+			$content = $content . "<br>";
+		}
+		$content = $content . "</p><a href=\"/index.php/clusters/viewCluster/$cluster->id\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View Location Info</button></a></section>";
+		$cluster->Content = $content;
+		return $cluster;
 	}
 }

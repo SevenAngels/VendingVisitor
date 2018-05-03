@@ -22,7 +22,8 @@ class Clusters extends CI_Controller
 			show_404();
 		}
 		$data['page_title'] = 'Vending Visitor - Cluster';
-		$data['cluster'] = $this->Cluster->getClusterByID($clusterID);
+		$cluster = $this->Cluster->getClusterByID($clusterID);
+		$data['cluster'] = $cluster;
 
 		$this->load->view('templates/header.php', $data);
 
@@ -36,4 +37,6 @@ class Clusters extends CI_Controller
 		}
 		$this->load->view('templates/footer.php', $data);
 	}
+
+
 }
