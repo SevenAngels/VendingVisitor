@@ -16,6 +16,18 @@
     </section>
     <div class="album py-5 bg-light">
         <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-2">
+                    <button type="button" class="btn btn-dark btn-lg btn-block float-right">All</button>
+                </div>
+                <div class="col-lg-2">
+                    <button type="button" class="btn btn-dark btn-lg btn-block">Snacks</button>
+                </div>
+                <div class="col col-lg-2">
+                    <button type="button" class="btn btn-dark btn-lg btn-block">Drinks</button>
+                </div>
+            </div>
+            <br><br>
             <div class="row">
                 <?php foreach ($products as $product): ?>
                     <div class="col-md-4">
