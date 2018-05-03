@@ -34,7 +34,13 @@ class Cluster extends CI_Model
 	{
 		$sql = 'SELECT * FROM Clusters';
 		$query = $this->db->query($sql);
-		return $query->result();
+		$clusters = $query->result();
+		$results = array();
+		foreach ($clusters as $cluster) {
+			$cluster = $this->getCounts($cluster);
+			array_push($results, $cluster);
+		}
+		return $results;
 	}
 
 	/**
@@ -45,7 +51,9 @@ class Cluster extends CI_Model
 	{
 		$sql = 'SELECT * FROM Clusters WHERE id = ?';
 		$query = $this->db->query($sql, array($id));
-		return $query->row();
+		$cluster = $query->row();
+		$cluster = $this->getCounts($cluster);
+		return $cluster;
 	}
 
 	/**
@@ -56,7 +64,13 @@ class Cluster extends CI_Model
 	{
 		$sql = 'SELECT * FROM Clusters WHERE Building LIKE ?';
 		$query = $this->db->query($sql, array('%' . $building . '%'));
-		return $query->result();
+		$clusters = $query->result();
+		$result = array();
+		foreach ($clusters as $cluster) {
+			$cluster = $this->getCounts($cluster);
+			array_push($result, $cluster);
+		}
+		return $result;
 	}
 
 	/**
@@ -67,6 +81,19 @@ class Cluster extends CI_Model
 	{
 		$sql = 'SELECT Clusters.* FROM Machines INNER JOIN Clusters ON Machines.ClusterID = Clusters.id WHERE Machines.id = ?';
 		$query = $this->db->query($sql, array($machineID));
-		return $query->row();
+		$cluster = $query->row();
+		$cluster = $this->getCounts($cluster);
+		return $cluster;
+	}
+
+	private function getCounts($cluster)
+	{
+		$sql = "SELECT COUNT(*) AS NumFood FROM Machines WHERE ClusterID = $cluster->id AND Type = 'Snack'";
+		$cluster->NumFood = $this->db->query($sql)->row()->NumFood;
+		$sql = "SELECT COUNT(*) AS NumDrink FROM Machines WHERE ClusterID = $cluster->id AND Type = 'Drink'";
+		$cluster->NumDrink = $this->db->query($sql)->row()->NumDrink;
+		$sql = "SELECT COUNT(*) AS NumCoffee FROM Machines WHERE ClusterID = $cluster->id AND Type = 'Coffee'";
+		$cluster->NumCoffee = $this->db->query($sql)->row()->NumCoffee;
+		return $cluster;
 	}
 }
