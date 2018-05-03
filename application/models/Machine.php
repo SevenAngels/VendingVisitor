@@ -62,7 +62,7 @@ class Machine extends CI_Model
 
 	/**
 	 * @param $productID int ID of the Product to be searched for
-	 * @return array of Machines which contain the specified Product
+	 * @return array of Machines which contain the specified Product, no more than one per cluster
 	 */
 	public function getMachinesWithProduct($productID)
 	{

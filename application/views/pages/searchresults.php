@@ -8,10 +8,11 @@
 	<?php
 	foreach ($results as $product): ?>
 		<li>
-			<a href="/index.php/inventory/viewProduct/<?php echo $product->id ?>">
-				<img src="/assets/imgs/products/<?php echo $product->ImageName ?>">
-				<?php echo "$product->Name $";
-				echo $product->Price / 100 ?>
+			<img src="/assets/imgs/products/<?php echo $product->ImageName ?>">
+			<?php echo "$product->Name $";
+			echo $product->Price / 100 ?>
+			<a href="/index.php/products/viewProduct/<?php echo $product->id ?>">
+				<button type="button" class="btn btn-sm btn-outline-secondary">View Product Info</button>
 			</a>
 		</li>
 	<?php endforeach; ?>

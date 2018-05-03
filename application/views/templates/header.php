@@ -33,10 +33,7 @@
 				<a class="nav-link" href="/index.php/map/view">Home <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/index.php/browse/all">Browse Items</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/index.php/map/testProductID">Testing</a>
+				<a class="nav-link" href="/index.php/products/viewAll">Browse Items</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">Feedback</a>

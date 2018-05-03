@@ -15,6 +15,7 @@ class Map extends CI_Controller
 		parent::__construct();
 		$this->load->model('Machine');
 		$this->load->model('Product');
+		$this->load->model('Cluster');
 		$this->load->helper('url_helper');
 	}
 
@@ -25,9 +26,11 @@ class Map extends CI_Controller
 		}
 
 		$data['page_title'] = "Vending Visitor";
+		$data['clusters'] = $this->Cluster->getAllClusters();
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('pages/map', $data);
+		$this->load->view('templates/footer.php', $data);
 	}
 
 	/**
@@ -35,7 +38,7 @@ class Map extends CI_Controller
 	 */
 	public function testProductID()
 	{
-		if (!file_exists(APPPATH . 'views/pages/machinetest.php')) {
+		if (!file_exists(APPPATH . 'views/pages/machine.php')) {
 			show_404();
 		}
 		$data['page_title'] = "VV Testing";
@@ -43,5 +46,19 @@ class Map extends CI_Controller
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('pages/machinetest', $data);
+		$this->load->view('templates/footer.php', $data);
+	}
+
+	public function testMap()
+	{
+		if (!file_exists(APPPATH . 'views/pages/maptest.php')) {
+			show_404();
+		}
+		$data['page_title'] = "VV Testing";
+		$data['clusters'] = $this->Cluster->getAllClusters();
+
+		$this->load->view('templates/header', $data);
+		$this->load->view('pages/maptest', $data);
+		$this->load->view('templates/footer.php', $data);
 	}
 }
