@@ -46,7 +46,6 @@ echo $product->Name . "\n"; ?>
 </style>
 <script>
 	function initMap() {
-		var infoWindow;
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 16,
 			center: {lat: 35.307, lng: -80.734}
@@ -63,7 +62,7 @@ echo $product->Name . "\n"; ?>
 				content: '<p><?php echo $machine->Building?></p>' +
 				'<a href="/index.php/machines/viewMachine/<?php echo $machine->id?>">' +
 				'<button type="button" class="btn btn-sm btn-outline-secondary">View Machine Info</button></a>'
-			}).open(map, marker);
+			}).open(map, marker.position);
 		});
 		<?php endforeach; ?>
 	}

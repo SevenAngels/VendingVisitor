@@ -17,10 +17,10 @@
 	function initMap() {
 		let infoWindow;
 		let arr = [];
-		let cluster;
 		<?php /** @var array $clusters */
-		foreach($clusters as $cluster): ?>
-		cluster = {
+		for($i = 0; $i < count($clusters); $i++): ?>
+		<?php $cluster = $clusters[$i] ?>
+		arr[<?php echo $i ?>] = {
 			id: <?php echo $cluster->id ?>,
 			Building: '<?php echo $cluster->Building ?>',
 			Description: '<?php echo $cluster->Description ?>',
@@ -34,8 +34,8 @@
 			'</h2><p><br>Snack Machines: <?php echo $cluster->NumFood?><br>Drink Machines: <?php echo
 			$cluster->NumDrink ?><br>Coffee Machines: <?php echo $cluster->NumCoffee ?></p></a>'
 		};
-		arr.push(cluster);
-		<?php endforeach; ?>
+		<?php endfor; ?>
+
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 17,
 			center: {lat: 35.307, lng: -80.734}
