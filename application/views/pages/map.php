@@ -15,7 +15,9 @@
 </style>
 <script>
 	function initMap() {
-		let infoWindow;
+		let activeInfoWindow = new google.maps.InfoWindow({
+			content: ''
+		});
 		let arr = [];
 		<?php /** @var array $clusters */
 		for($i = 0; $i < count($clusters); $i++): ?>
@@ -43,10 +45,11 @@
 				map: map
 			});
 			marker.addListener('click', function () {
-				infoWindow = new google.maps.InfoWindow({
+				activeInfoWindow.close();
+				activeInfoWindow = new google.maps.InfoWindow({
 					content: arr[i].Content
 				});
-				infoWindow.open(map, marker);
+				activeInfoWindow.open(map, marker);
 			});
 		}
 
