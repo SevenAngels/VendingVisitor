@@ -1,44 +1,65 @@
-<h1><?php /** @var Cluster $cluster */
-	echo $cluster->Building ?></h1>
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading"><?php /** @var Cluster $cluster */ echo $cluster->Building ?></h1>
+            <p class="lead text-muted"><?php echo $cluster->Description ?></p>
+        </div>
+    </section>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <?php /** @var array $machines */
+                    foreach ($machines as $machine): ?>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <blockquote class="blockquote text-center">
+	                            <h3><?php echo $machine->Type ?> Machine</h3>
+                                </blockquote>
+                                    <div class="card-body">
+	                                    <!-- <?php if ($machine->Type == 'Drink'): ?>
+		                                <p>Machine Brand: <?php echo $machine->Brand ?></p>
+	                                    <?php endif; ?> -->
+	                                    <p>Takes 49er Card: <?php if ($machine->Niner == 1) {
+			                                echo 'Yes';
+		                                } else {
+	                                        echo 'No';
+		                                } ?> <br>
+		                                Takes Credit/Debit Card: <?php if ($machine->Credit == 1) {
+			                                echo 'Yes';
+		                                } else {
+			                                echo 'No';
+		                                } ?>
+	                                    </p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+	                                                    <a href="/index.php/machines/viewMachine/<?php echo $machine->id ?>">
+		                                                <button type="button" class="btn btn-sm btn-outline-secondary">View Machine Contents</button>
+	                                                    </a>
+                                                    </div>
+                                                </div>
+                                    </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+</main>
 
-<h2><?php echo $cluster->Description ?></h2>
-<h2>Machines at this location:</h2>
-<?php /** @var array $machines */
-foreach ($machines as $machine): ?>
-	<h3>Machine Type: <?php echo $machine->Type ?></h3>
-	<?php if ($machine->Type == 'Drink'): ?>
-		<p>Machine Brand: <?php echo $machine->Brand ?></p>
-	<?php endif; ?>
-	<p>Takes 49er Card: <?php if ($machine->Niner == 1) {
-			echo 'Yes';
-		} else {
-			echo 'No';
-		} ?> <br>
-		Takes Credit/Debit Card: <?php if ($machine->Credit == 1) {
-			echo 'Yes';
-		} else {
-			echo 'No';
-		} ?>
-	</p>
-	<a href="/index.php/machines/viewMachine/<?php echo $machine->id ?>">
-		<button type="button" class="btn btn-sm btn-outline-secondary">View Machine Contents</button>
-	</a>
-<?php endforeach; ?>
 <div id="map"></div>
 <style>
 	/* Always set the map height explicitly to define the size of the div
      * element that contains the map. */
-	#map {
-		height: 30%;
-		width: 30%;
-	}
+    #map {
+        height: 95%;
+    }
 
-	html, body {
-		height: 100%;
-		width: 100%;
-		margin: 0;
-		padding: 0;
-	}
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
 </style>
 <script>
 	function initMap() {
