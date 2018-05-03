@@ -29,6 +29,28 @@ class Products extends CI_Controller
 		$this->load->view('templates/footer.php', $data);
 	}
 
+	public function viewSnacks()
+	{
+		$data['page_title'] = 'Vending Visitor - Browse';
+		$data['products'] = $this->Product->getAllSnacks();
+		$data['active'] = 'Browse';
+
+		$this->load->view('templates/header.php', $data);
+		$this->load->view('pages/browse.php', $data);
+		$this->load->view('templates/footer.php', $data);
+	}
+
+	public function viewDrinks()
+	{
+		$data['page_title'] = 'Vending Visitor - Browse';
+		$data['products'] = $this->Product->getAllDrinks();
+		$data['active'] = 'Browse';
+
+		$this->load->view('templates/header.php', $data);
+		$this->load->view('pages/browse.php', $data);
+		$this->load->view('templates/footer.php', $data);
+	}
+
 	public function viewProduct($id)
 	{
 		$data['page_title'] = 'Vending Visitor - Browse';

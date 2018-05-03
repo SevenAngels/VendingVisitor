@@ -27,8 +27,21 @@ class Product extends CI_Model
 	 */
 	public function getAllProducts()
 	{
-		$query = $this->db->get('Products');
+		$sql = "SELECT Products.* FROM Products ORDER BY Name";
+		$query = $this->db->query($sql);
 		return $query->result();
+	}
+
+	public function getAllSnacks()
+	{
+		$sql = "SELECT Products.* FROM Products WHERE Type = 'Snack' ORDER BY Name ";
+		return $this->db->query($sql)->result();
+	}
+
+	public function getAllDrinks()
+	{
+		$sql = "SELECT Products.* FROM Products WHERE Type = 'Drink' ORDER BY Name";
+		return $this->db->query($sql)->result();
 	}
 
 	/**

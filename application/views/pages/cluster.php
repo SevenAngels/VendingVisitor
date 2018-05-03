@@ -15,9 +15,9 @@
                                 <h5 class="card-header">
 	                            <?php echo $machine->Type ?> Machine</h5>
                                     <div class="card-body">
-	                                    <!-- <?php if ($machine->Type == 'Drink'): ?>
-		                                <p>Machine Brand: <?php echo $machine->Brand ?></p>
-	                                    <?php endif; ?> -->
+										<?php if ($machine->Type == 'Drink'): ?>
+											<?php echo $machine->Brand ?>
+										<?php endif; ?>
 	                                    <p>Takes 49er Card: <?php if ($machine->Niner == 1) {
 			                                echo 'Yes';
 		                                } else {

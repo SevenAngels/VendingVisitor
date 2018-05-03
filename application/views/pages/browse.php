@@ -18,13 +18,19 @@
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col col-lg-2">
-                    <button type="button" class="btn btn-dark btn-lg btn-block float-right">All</button>
+					<a href="/index.php/products/viewAll">
+						<button type="button" class="btn btn-dark btn-lg btn-block float-right">All</button>
+					</a>
                 </div>
                 <div class="col-lg-2">
-                    <button type="button" class="btn btn-dark btn-lg btn-block">Snacks</button>
+					<a href="/index.php/products/viewSnacks">
+						<button type="button" class="btn btn-dark btn-lg btn-block float-right">Snacks</button>
+					</a>
                 </div>
                 <div class="col col-lg-2">
-                    <button type="button" class="btn btn-dark btn-lg btn-block">Drinks</button>
+					<a href="/index.php/products/viewDrinks">
+						<button type="button" class="btn btn-dark btn-lg btn-block float-right">Drinks</button>
+					</a>
                 </div>
             </div>
             <br><br>
