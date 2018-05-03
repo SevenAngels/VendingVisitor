@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link href="/assets/css/album.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap-tour.min.css" rel="stylesheet">
 	<title>
 		<?php
 		if (!empty($page_title)) {
@@ -21,7 +22,8 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="#">Vending Visitor</a>
+	<a class="navbar-brand" href="#"><img src="/assets/imgs/vv-logo.png" width="30" height="43" class="d-inline-block align-middle" alt="">
+        Vending Visitor</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -29,8 +31,8 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
-				<a class="nav-link" href="/index.php/map/view">Home <span class="sr-only">(current)</span></a>
+			<li class="nav-item">
+				<a class="nav-link" href="/index.php/map/view">Home<span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="/index.php/products/viewAll">Browse Items</a>
