@@ -24,6 +24,7 @@ class Clusters extends CI_Controller
 		$data['page_title'] = 'Vending Visitor - Cluster';
 		$cluster = $this->Cluster->getClusterByID($clusterID);
 		$data['cluster'] = $cluster;
+		$data['active'] = '';
 
 		$this->load->view('templates/header.php', $data);
 

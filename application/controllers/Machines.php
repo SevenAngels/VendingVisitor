@@ -22,6 +22,7 @@ class Machines extends CI_Controller
 		}
 		$data['page_title'] = 'Vending Visitor - Machine';
 		$data['machine'] = $this->Machine->getMachineByID($machineID);
+		$data['active'] = '';
 
 		$this->load->view('templates/header.php', $data);
 		$this->load->view('pages/machine.php', $data);

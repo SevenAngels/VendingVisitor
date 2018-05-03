@@ -22,7 +22,8 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="#"><img src="/assets/imgs/vv-logo.png" width="30" height="43" class="d-inline-block align-middle" alt="">
+	<a class="navbar-brand" href="/index.php/map/view"><img src="/assets/imgs/vv-logo.png" width="30" height="43"
+															class="d-inline-block align-middle" alt="">
         Vending Visitor</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,16 +33,16 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item <?php /** @var string $active */
-			if ($active == 'Map') echo 'active' ?>">
+			if ($active != null && $active == 'Map') echo 'active' ?>">
 				<a class="nav-link" href="/index.php/map/view">Map<span class="sr-only">(current)</span></a>
 			</li>
-			<li class="nav-item <?php if ($active == 'Browse') echo 'active' ?>">
+			<li class="nav-item <?php if ($active != null && $active == 'Browse') echo 'active' ?>">
 				<a class="nav-link" href="/index.php/products/viewAll">Browse Items</a>
 			</li>
-			<li class="nav-item <?php if ($active == 'Feedback') echo 'active' ?>">
+			<li class="nav-item <?php if ($active != null && $active == 'Feedback') echo 'active' ?>">
 				<a class="nav-link" href="#">Feedback</a>
 			</li>
-			<li class="nav-item <?php if ($active == 'Contact') echo 'active' ?>">
+			<li class="nav-item <?php if ($active != null && $active == 'Contact') echo 'active' ?>">
 				<a class="nav-link" href="#">Contact Us</a>
 			</li>
 		</ul>
