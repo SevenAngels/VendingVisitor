@@ -86,7 +86,6 @@
 
 		let userLocation = new google.maps.InfoWindow();
 
-		// TODO fix geolocation?
 		// Try HTML5 geolocation.
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function (position) {
@@ -97,8 +96,10 @@
 
 				userLocation.setPosition(pos);
 				userLocation.setContent('You Are Here');
-				userLocation.open(map);
-				map.setCenter(pos);
+				if (bounds.contains(pos)) {
+					userLocation.open(map);
+					map.setCenter(pos);
+				}
 			}, function () {
 				handleLocationError(true, userLocation, map.getCenter());
 			});

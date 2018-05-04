@@ -91,7 +91,6 @@ echo $product->Name . "\n"; ?>
 		};
 		<?php endfor; ?>
 
-		//TODO add info windows to each marker displayed
 		let activeInfoWindow = new google.maps.InfoWindow({
 			content: ''
 		});
