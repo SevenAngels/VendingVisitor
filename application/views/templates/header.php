@@ -39,9 +39,6 @@
 			<li class="nav-item <?php if ($active != null && $active == 'Browse') echo 'active' ?>">
 				<a class="nav-link" href="/index.php/products/viewAll">Browse Items</a>
 			</li>
-			<li class="nav-item <?php if ($active != null && $active == 'Feedback') echo 'active' ?>">
-				<a class="nav-link" href="#">Feedback</a>
-			</li>
 			<li class="nav-item <?php if ($active != null && $active == 'Contact') echo 'active' ?>">
 				<a class="nav-link" href="/index.php/contact/view">Contact Us</a>
 			</li>
