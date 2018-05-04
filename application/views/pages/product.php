@@ -9,7 +9,6 @@ echo $product->Name . "\n"; ?>
             </h1>
         </div>
     </section>
-	<!-- TODO center this item view and improve the info displayed -->
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row justify-content-center">
@@ -18,9 +17,9 @@ echo $product->Name . "\n"; ?>
                         <img src="/assets/imgs/products/<?php echo $product->ImageName ?>"
                              alt="<?php echo $product->ImageName ?>" class="rounded mx-auto d-block" height="300">
                             <div class="card-body">
-								<?php echo 'Price = $' . number_format(
+								<?php echo '$' . number_format(
 										($product->Price / 100), 2, '.', ' ') ?><br>
-                                <?php echo 'Type = ' . $product->Type . "\n"; ?>
+								<?php echo 'Type: ' . $product->Type . "\n"; ?>
                             </div>
                     </div>
                 </div>
