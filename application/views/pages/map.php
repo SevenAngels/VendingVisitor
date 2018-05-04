@@ -40,10 +40,10 @@
 			center: {lat: 35.307, lng: -80.734}
 		});
         
-        var bounds = new google.maps.LatLngBounds(
-            new google.maps.LatLng(35.2986767, -80.7459698), 
-            new google.maps.LatLng(35.3148539, -80.7223077)
-        );
+        var swBound = new google.maps.LatLng(35.2986767, -80.7459698);
+        var neBound = new google.maps.LatLng(35.3148539, -80.7223077);
+        
+        var bounds = new google.maps.LatLngBounds(swBound, neBound);
         
         map.fitBounds(bounds);
         
