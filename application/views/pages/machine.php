@@ -1,7 +1,7 @@
 <main role="main">
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">
+			<h1 class="jumbotron-heading"> <!-- TODO Improve data displayed here -->
 <?php /** @var Machine $machine */ ?>
                 Machine ID: <?php echo $machine->id ?> <br></h1>
             <p class="lead text-muted">
@@ -10,7 +10,7 @@
             Machine Branding: <?php echo $machine->Brand ?> <br>
             Machine Type: <?php echo $machine->Type ?> <br>
             Takes Niner Card: <?php if ($machine->Niner == 1) echo 'Yes'; else echo 'No' ?> <br>
-                Takes Credit/Debit Card: <?php if ($machine->Credit == 1) echo 'Yes'; else echo 'No' ?> <br> <br></p>
+				Takes Credit/Debit Card: <?php if ($machine->Credit == 1) echo 'Yes'; else echo 'No' ?> <br> <br></p>
         </div>
     </section>
     <div class="album py-5 bg-light">
@@ -54,6 +54,7 @@
     }
 </style>
 <script>
+	//TODO add infoWindow to this marker
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 18,

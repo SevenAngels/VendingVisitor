@@ -9,6 +9,7 @@ echo $product->Name . "\n"; ?>
             </h1>
         </div>
     </section>
+	<!-- TODO center this item view and improve the info displayed -->
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row">
@@ -51,20 +52,14 @@ echo $product->Name . "\n"; ?>
 			zoom: 16,
 			center: {lat: 35.307, lng: -80.734}
 		});
-		let marker; //TODO make info window content more robust
+		let marker; //TODO add info windows to each marker displayed
 		<?php /** @var array $machines */
 		foreach($machines as $machine): ?>
 		marker = new google.maps.Marker({
 			position: {lat: <?php echo $machine->Latitude?>, lng: <?php echo $machine->Longitude?>},
 			map: map
 		});
-		marker.addListener('click', function () {
-			new google.maps.InfoWindow({
-				content: '<p><?php echo $machine->Building?></p>' +
-				'<a href="/index.php/machines/viewMachine/<?php echo $machine->id?>">' +
-				'<button type="button" class="btn btn-sm btn-outline-secondary">View Machine Info</button></a>'
-			}).open(map, marker.position);
-		});
+		[]
 		<?php endforeach; ?>
 	}
 </script>

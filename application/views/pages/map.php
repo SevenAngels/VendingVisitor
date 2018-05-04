@@ -43,7 +43,7 @@
 			let marker = new google.maps.Marker({
 				position: {lat: arr[i].Latitude, lng: arr[i].Longitude},
 				map: map
-			});
+			}); //TODO add directions button and service to infoWindow
 			marker.addListener('click', function () {
 				activeInfoWindow.close();
 				activeInfoWindow = new google.maps.InfoWindow({
@@ -55,6 +55,7 @@
 
 		let userLocation = new google.maps.InfoWindow();
 
+		// TODO fix geolocation?
 		// Try HTML5 geolocation.
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function (position) {

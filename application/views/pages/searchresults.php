@@ -18,7 +18,8 @@
                         <img src="/assets/imgs/products/<?php echo $product->ImageName ?>"
                              alt="<?php echo $product->ImageName ?>" class="rounded mx-auto d-block" height="300">
                         <div class="card-body">
-                            <p class="card-text"><?php echo $product->Name ?><br>$<?php echo $product->Price / 100 ?></p>
+							<p class="card-text"><?php echo $product->Name ?><br>$<?php echo number_format(
+									($product->Price / 100), 2, '.', ' ') ?></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a href="/index.php/products/viewProduct/<?php echo $product->id ?>">

@@ -23,7 +23,7 @@ class Clusters extends CI_Controller
 		}
 		$data['page_title'] = 'Vending Visitor - Cluster';
 		$cluster = $this->Cluster->getClusterByID($clusterID);
-		$data['cluster'] = $cluster;
+		$data['cluster'] = $this->getInfoWindow($cluster);
 		$data['active'] = '';
 
 		$this->load->view('templates/header.php', $data);
@@ -34,10 +34,18 @@ class Clusters extends CI_Controller
 			$this->load->view('pages/machine.php', $data);
 		} else {
 			$data['machines'] = $this->Machine->getMachinesByCluster($clusterID);
+
 			$this->load->view('pages/cluster.php', $data);
 		}
 		$this->load->view('templates/footer.php', $data);
 	}
 
+	private function getInfoWindow($cluster) //TODO add link to directions in infoWindow button once the service is done
+	{
+		$content =
+			"<section class=\"jumbotron text-center\"><div class=\"container\"><h1 class=\"jumbotron-heading\">$cluster->Building</h1></div><p class=\"lead text-muted\">$cluster->Description</p><a href=\"#\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Get Directions</button></a></section>";
+		$cluster->Content = $content;
+		return $cluster;
+	}
 
 }

@@ -71,6 +71,7 @@
 			NumFood: <?php echo $cluster->NumFood ?>,
 			NumDrink: <?php echo $cluster->NumDrink ?>,
 			NumCoffee: <?php echo $cluster->NumCoffee ?>,
+			Content: '<?php echo $cluster->Content ?>'
 		};
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 18,
@@ -79,6 +80,12 @@
 		let marker = new google.maps.Marker({
 			position: {lat: cluster.Latitude, lng: cluster.Longitude},
 			map: map
+		});
+		let infoWindow = new google.maps.InfoWindow({
+			content: cluster.Content
+		});
+		marker.addListener('click', function () {
+			infoWindow.open(map, marker);
 		});
 	}
 </script>
