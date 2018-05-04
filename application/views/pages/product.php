@@ -80,15 +80,35 @@ echo $product->Name . "\n"; ?>
             map.setCenter(new google.maps.LatLng(y, x));
         });
 
-		let marker; //TODO add info windows to each marker displayed
-		<?php /** @var array $machines */
-		foreach($machines as $machine): ?>
-		marker = new google.maps.Marker({
-			position: {lat: <?php echo $machine->Latitude?>, lng: <?php echo $machine->Longitude?>},
-			map: map
+		var machines = [];
+		<?php for ($i = 0; $i < count($machines); $i++): ?>
+		<?php $machine = $machines[$i] ?>
+		machines[<?php echo $i?>] = {
+			id: <?php echo $machine->id ?>,
+			Latitude: <?php echo $machine->Latitude ?>,
+			Longitude: <?php echo $machine->Longitude ?>,
+			Building: '<?php echo $machine->Building ?>',
+			Content: '<?php echo $machine->Content ?>'
+		};
+		<?php endfor; ?>
+
+		//TODO add info windows to each marker displayed
+		let activeInfoWindow = new google.maps.InfoWindow({
+			content: ''
 		});
-		[]
-		<?php endforeach; ?>
+		for (let i = 0; i < machines.length; i++) {
+			let marker = new google.maps.Marker({
+				position: {lat: machines[i].Latitude, lng: machines[i].Longitude},
+				map: map
+			});
+			marker.addListener('click', function () {
+				activeInfoWindow.close();
+				activeInfoWindow = new google.maps.InfoWindow({
+					content: machines[i].Content
+				});
+				activeInfoWindow.open(map, marker);
+			});
+		}
 	}
 </script>
 <script async defer
