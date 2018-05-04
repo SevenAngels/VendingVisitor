@@ -12,7 +12,7 @@ echo $product->Name . "\n"; ?>
 	<!-- TODO center this item view and improve the info displayed -->
     <div class="album py-5 bg-light">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
                         <img src="/assets/imgs/products/<?php echo $product->ImageName ?>"
