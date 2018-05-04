@@ -39,11 +39,20 @@
 			zoom: 17,
 			center: {lat: 35.307, lng: -80.734}
 		});
+        
+        var bounds = new google.maps.LatLngBounds(
+            new google.maps.LatLng(35.2986767, -80.7459698), 
+            new google.maps.LatLng(35.3148539, -80.7223077)
+        );        
+        
 		for (let i = 0; i < arr.length; i++) {
 			let marker = new google.maps.Marker({
 				position: {lat: arr[i].Latitude, lng: arr[i].Longitude},
 				map: map
 			});
+            
+            var markerLatLng = new google.maps.LatLng(arr[i].Latitude, arr[i].Longitude);
+            //bounds.extend(markerLatLng);
 			marker.addListener('click', function () {
 				activeInfoWindow.close();
 				activeInfoWindow = new google.maps.InfoWindow({
@@ -52,7 +61,7 @@
 				activeInfoWindow.open(map, marker);
 			});
 		}
-
+        
 		let userLocation = new google.maps.InfoWindow();
 
 		// Try HTML5 geolocation.
