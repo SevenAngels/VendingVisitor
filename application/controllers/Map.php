@@ -40,6 +40,24 @@ class Map extends CI_Controller
 		$this->load->view('templates/footer.php', $data);
 	}
 
+	public function directions($clusterID)
+	{
+		if (!file_exists(APPPATH . 'views/pages/directions.php')) {
+			show_404();
+		}
+
+		$destination = $this->Cluster->getClusterByID($clusterID);
+		$destination = $this->getInfoWindow($destination);
+
+		$data['page_title'] = "Vending Visitor Directions";
+		$data['destination'] = $destination;
+		$data['active'] = 'Map';
+
+		$this->load->view('templates/header', $data);
+		$this->load->view('pages/directions', $data);
+		$this->load->view('templates/footer.php', $data);
+	}
+
 	private function getInfoWindow($cluster)
 	{
 		$content =
@@ -65,7 +83,7 @@ class Map extends CI_Controller
 			}
 			$content = $content . "<br>";
 		}
-		$content = $content . "</p><a href=\"/index.php/clusters/viewCluster/$cluster->id\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View Location Info</button></a></section>";
+		$content = $content . "</p><a href=\"/index.php/clusters/viewCluster/$cluster->id\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View Location Info</button></a><br><br><a href=\"/index.php/map/directions/$cluster->id\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Get Directions</button></a></section>";
 		$cluster->Content = $content;
 		return $cluster;
 	}

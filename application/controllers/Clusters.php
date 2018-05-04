@@ -43,7 +43,7 @@ class Clusters extends CI_Controller
 	private function getInfoWindow($cluster) //TODO add link to directions in infoWindow button once the service is done
 	{
 		$content =
-			"<section class=\"jumbotron text-center\"><div class=\"container\"><h1 class=\"jumbotron-heading\">$cluster->Building</h1></div><p class=\"lead text-muted\">$cluster->Description</p><a href=\"#\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Get Directions</button></a></section>";
+			"<section class=\"jumbotron text-center\"><div class=\"container\"><h1 class=\"jumbotron-heading\">$cluster->Building</h1></div><p class=\"lead text-muted\">$cluster->Description</p><a href=\"/index.php/map/directions/$cluster->id\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Get Directions</button></a></section>";
 		$cluster->Content = $content;
 		return $cluster;
 	}

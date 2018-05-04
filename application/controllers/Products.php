@@ -77,7 +77,7 @@ class Products extends CI_Controller
 		} else {
 			$content = $content . "$machine->Type Machine";
 		}
-		$content = $content . "</p><a href=\"/index.php/machines/viewMachine/$machine->id\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View Machine Contents</button></a><br><br><a href=\"#\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Get Directions</button></a></section>";
+		$content = $content . "</p><a href=\"/index.php/machines/viewMachine/$machine->id\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View Machine Contents</button></a><br><br><a href=\"/index.php/map/directions/$machine->ClusterID\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Get Directions</button></a></section>";
 		$machine->Content = $content;
 		return $machine;
 	}
