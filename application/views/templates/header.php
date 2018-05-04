@@ -43,7 +43,7 @@
 				<a class="nav-link" href="#">Feedback</a>
 			</li>
 			<li class="nav-item <?php if ($active != null && $active == 'Contact') echo 'active' ?>">
-				<a class="nav-link" href="#">Contact Us</a>
+				<a class="nav-link" href="/index.php/contact/view">Contact Us</a>
 			</li>
 		</ul>
 		<form class="form-inline my-2 my-lg-0" action="/index.php/search/searchForProduct" method="get">
