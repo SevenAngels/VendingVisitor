@@ -52,7 +52,39 @@ echo $product->Name . "\n"; ?>
 			zoom: 16,
 			center: {lat: 35.307, lng: -80.734}
 		});
+<<<<<<< HEAD
 		let marker; //TODO add info windows to each marker displayed
+=======
+        
+        var swBound = new google.maps.LatLng(35.2986767, -80.7459698);
+        var neBound = new google.maps.LatLng(35.3148539, -80.7223077);
+        
+        var bounds = new google.maps.LatLngBounds(swBound, neBound);
+        
+        map.fitBounds(bounds);
+        
+        google.maps.event.addListener(map, 'dragend', function() {
+            if (bounds.contains(map.getCenter())) return;
+
+            // We're out of bounds - Move the map back within the bounds
+            var c = map.getCenter(),
+            x = c.lng(),
+            y = c.lat(),
+            maxX = bounds.getNorthEast().lng(),
+            maxY = bounds.getNorthEast().lat(),
+            minX = bounds.getSouthWest().lng(),
+            minY = bounds.getSouthWest().lat();
+
+            if (x < minX) x = minX;
+            if (x > maxX) x = maxX;
+            if (y < minY) y = minY;
+            if (y > maxY) y = maxY;
+
+            map.setCenter(new google.maps.LatLng(y, x));
+        });
+        
+		let marker; //TODO make info window content more robust
+>>>>>>> StrictBounds
 		<?php /** @var array $machines */
 		foreach($machines as $machine): ?>
 		marker = new google.maps.Marker({
